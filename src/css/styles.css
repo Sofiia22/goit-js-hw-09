@@ -12,7 +12,53 @@
 
 /* Sections style */
 @import url('./header.css');
-@import url('./vite-promo.css');
 @import url('./badges.css');
 @import url('./back-link.css');
-@import url('./footer.css');
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  gap: 10px; /* відстань між картинками */
+  list-style: none; /* прибираємо маркери <li> */
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-image {
+  width: 100%;
+  display: block;
+  object-fit: cover; /* картинки не спотворюються */
+  transition: transform 0.3s;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05); /* ефект при наведенні */
+}
+/* Стрілки SimpleLightbox */
+.sl-prev,
+.sl-next {
+  display: block !important;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.sl-prev {
+  left: 10px;
+}
+.sl-next {
+  right: 10px;
+}
